@@ -70,5 +70,8 @@ etc.
 
 ---
 
+## Competition Link
+https://www.kaggle.com/competitions/comodity-price-prediction-penyisihan-arkavidia-9
+
 ## Citation
 Datavidia. Commodity Price Prediction, Penyisihan Datavidia 9. https://kaggle.com/competitions/comodity-price-prediction-penyisihan-arkavidia-9, 2025. Kaggle.
