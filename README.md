@@ -42,31 +42,10 @@ MAPE dipilih karena menyediakan metrik kesalahan berbasis persentase yang intuit
 
 ---
 
-## Leaderboard
-Peringkat dalam kompetisi ini akan didasarkan pada Mean Absolute Persentage Error (MAPE), di mana skor yang lebih rendah akan mendapatkan peringkat lebih tinggi. Leaderboard akan terdiri dari dua fase:
+## Hasil & Pembahasan 
+Jenis analisis deret waktu yang dilakukan adalah analisis multivariate, yakni analisis menggunakan beberapa atribut sebagai prediktor untuk melakukan peramalan pada data deret waktu. Dari data-data yang disediakan, kami memilih untuk menggunakan harga keenam komoditas global (global commodity price) dan nilai tukar Rupiah ke US Dollar. Data harga komoditas global memiliki kolom price yang menunjukkan harga pasar pada akhir perdagangan, open yang menunjukkan harga pembukaan pasar saat mulai beroperasi, high yang menunjukkan harga tertinggi yang dicapai oleh suatu komoditas pada hari tersebut, low yang menunjukkan harga terendah yang dicapai oleh suatu komoditas pada hari tersebut, vol. yang menunjukkan jumlah kontrak suatu komoditas yang diperdagangkan pada hari itu, dan change % yang menunjukkan persentase perubahan harga (closing price) dibandingkan dengan harga penutupan hari sebelumnya. Kami memutuskan untuk hanya menggunakan nilai tukar Rupiah Indonesia ke US Dollar karena setelah melakukan eksplorasi menggunakan heatmap untuk mengetahui korelasi pearson dari harga komoditas bahan pangan dengan konversi mata uang, didapati bahwa hanya variabel konversi Rupiah Indonesia ke US Dollar lah yang memengaruhi harga komoditas bahan pangan, yakni beras medium, beras premium, dan gula konsumsi. Kolom yang terdapat pada dataset mata uang adalah open yang menunjukkan harga pertama pada hari tersebut, high yang menunjukkan harga tertinggi yang dicapai pada hari tersebut, low yang menunjukkan harga terendah yang dicapai pada hari tersebut, close yang menunjukkan harga terakhir  sebelum pasar ditutup, adj close yakni harga penutupan yang disesuaikan dan bernilai sama dengan close pada mata uang, dan volume yang menunjukkan jumlah unit yang diperdagangkan pada hari tersebut. Kami hanya memilih kolom close karena merupakan representasi yang paling akurat untuk mewakili kurs mata uang pada hari tersebut. Kami memutuskan untuk tidak menggunakan dataset Google Trend karena banyaknya data yang hilang (missing value) dan sulitnya mencari data kovariat lampau maupun kovariat masa depan dari data di internet. 
 
-**Public Leaderboard**
-Dihitung berdasarkan sebagian dari data uji (30%) dan akan terlihat sepanjang kompetisi. Ini memberikan gambaran sementara tentang performa model peserta selama kompetisi berlangsung.
-
-**Private Leaderboard**
-Dihitung berdasarkan sisa data uji (70%) dan akan digunakan untuk menentukan peringkat akhir di akhir kompetisi.
-
-**Pembobotan**
-Peringkat akhir akan ditentukan berdasarkan Private Leaderboard dengan bobot sebagai berikut: Final Submission Score = 100% Private
-
----
-
-## Submission
-Untuk setiap ID dalam test set, peserta harus memprediksi untuk variabel price. File .csv dikirim dengan menyertakan header dan memiliki format sebagai berikut yang dapat dilihat pada Harga Bahan Pangan/sample_submission.csv
-```
-id,price
-Bawang Merah/Aceh/2024-10-01,0
-Bawang Merah/Aceh/2024-10-02,0
-Bawang Merah/Aceh/2024-10-03,0
-Bawang Merah/Aceh/2024-10-04,0
-Bawang Merah/Aceh/2024-10-05,0
-etc.
-```
+Hyperparameter n_estimators dalam Random Forest Regressor menentukan jumlah pohon keputusan (decision trees) yang akan digunakan. Berdasarkan eksperimen hyperparameter tuning yang dilakukan dengan pilihan nilai n_estimator = 50, 100, 200, diperoleh nilai n_estimator yang memberikan hasil prediksi paling baik adalah n_estimator = 100 dengan indikator nilai MAPE yang menunjukkan angka paling minimum untuk nilai n_estimator tersebut. MAPE yang diperoleh untuk gula pasir di daerah Aceh adalah sebesar 0.063. 
 
 ---
 
