@@ -41,6 +41,7 @@ mape = mean_absolute_percentage_error(y_true, y_pred)
 
 ### Why MAPE?
 MAPE is chosen because it provides an intuitive percentage-based error metric, making it highly effective for this competition where accurate commodity price prediction is crucial. Given the influence of economic and market factors on commodity price fluctuations, participants are expected to develop models that consistently produce smaller percentage errors.
+
 ---
 
 ## Results & Discussion 
@@ -68,6 +69,7 @@ We selected only the close value, as it most accurately represents the exchange 
 We opted not to use the Google Trends dataset due to a high number of missing values and the difficulty of sourcing both past and future covariate data.
 
 The hyperparameter n_estimators in the Random Forest Regressor determines the number of decision trees to be used. Through hyperparameter tuning with n_estimators = 50, 100, and 200, we found that n_estimators = 100 yielded the best predictions, based on the lowest MAPE value. The resulting MAPE for sugar in the Aceh region was 0.063.
+
 ---
 
 ## Competition Link
