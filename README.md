@@ -38,6 +38,7 @@ Alternatively, MAPE can be calculated using the scikit-learn library:
 from sklearn.metrics import mean_absolute_percentage_error
 mape = mean_absolute_percentage_error(y_true, y_pred)
 ```
+
 ### Why MAPE?
 MAPE is chosen because it provides an intuitive percentage-based error metric, making it highly effective for this competition where accurate commodity price prediction is crucial. Given the influence of economic and market factors on commodity price fluctuations, participants are expected to develop models that consistently produce smaller percentage errors.
 ---
